@@ -29,6 +29,11 @@ body {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 .logo h2 {
     color: #2e7d32;
     font-size: 1.3rem;
@@ -149,14 +154,25 @@ body {
 
 .news-card {
     background: white;
-    padding: 1.2rem;
+    padding: 0;
     border: 1px solid #ddd;
     border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .news-card.urgent {
     border: 1px solid #d32f2f;
     background: #ffebee;
+}
+
+.news-card > div {
+    padding: 1.2rem;
 }
 
 .news-date {
@@ -342,23 +358,25 @@ body {
 
 .amount-buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin-bottom: 1rem;
 }
 
 .amount-btn {
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: 2px solid #ddd;
     background: white;
     border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    text-align: center;
 }
 
 .amount-btn:hover {
     border-color: #2e7d32;
-    color: #2e7d32;
+    background-color: #f9f9f9;
 }
 
 .amount-btn.active {
@@ -367,17 +385,39 @@ body {
     border-color: #2e7d32;
 }
 
+.amount-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.amount-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.amount-unit {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
 #customAmount {
     margin-top: 0.8rem;
 }
 
 .impact-box {
-    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    background-color: #e8f5e9;
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 1.2rem;
-    border: 1px solid #ddd;
-    text-align: center;
+    border: 1px solid #c8e6c9;
+}
+
+.impact-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
 }
 
 .impact-box p {
@@ -389,17 +429,24 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
 
 .badge {
+    display: inline-flex;
+    align-items: center;
     background: #f5f5f5;
-    padding: 6px 12px;
-    border-radius: 3px;
-    font-size: 0.8rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
     color: #666;
     border: 1px solid #ddd;
+    gap: 5px;
+}
+
+.badge-icon {
+    font-size: 1rem;
 }
 
 .dashboard-section {
@@ -444,7 +491,7 @@ body {
 }
 
 .stat-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 0.8rem;
 }
 
@@ -493,15 +540,27 @@ body {
 }
 
 .donation-item {
-    border-bottom: 1px solid #eee;
-    padding: 0.8rem 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    background: #f9f9f9;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
 }
 
 .donation-item:last-child {
     border-bottom: none;
+    margin-bottom: 0;
+}
+
+.donation-type-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.donation-info {
+    flex: 1;
 }
 
 .donation-info h4 {
@@ -516,7 +575,7 @@ body {
 }
 
 .donation-amount {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: #2e7d32;
 }
@@ -526,6 +585,14 @@ body {
     color: #999;
     padding: 1.5rem;
     font-style: italic;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px dashed #ddd;
 }
 
 .impact-section {
@@ -542,13 +609,13 @@ body {
 
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
 .impact-item {
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
     background: #f9f9f9;
     border-radius: 4px;
     border: 1px solid #eee;
@@ -560,9 +627,18 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.impact-img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
 .impact-item strong {
     color: #2e7d32;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    display: block;
+    margin: 0.5rem 0;
 }
 
 .impact-item p {
@@ -613,16 +689,7 @@ body {
     height: 180px;
     object-fit: cover;
     border-radius: 4px 4px 0 0;
-    margin-bottom: 1rem;
-}
-
-.news-card {
-    padding: 0;
-    overflow: hidden;
-}
-
-.news-card > div {
-    padding: 1.2rem;
+    margin-bottom: 0;
 }
 
 .news-card.urgent .news-img {
@@ -680,51 +747,6 @@ body {
     font-weight: bold;
 }
 
-.amount-buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 1rem;
-}
-
-.amount-btn {
-    padding: 15px;
-    border: 2px solid #ddd;
-    background: white;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.3s;
-    text-align: center;
-}
-
-.amount-btn:hover {
-    border-color: #2e7d32;
-    background-color: #f9f9f9;
-}
-
-.amount-btn.active {
-    background-color: #2e7d32;
-    color: white;
-    border-color: #2e7d32;
-}
-
-.amount-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.amount-number {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.amount-unit {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
 .type-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -761,47 +783,8 @@ body {
     object-fit: contain;
 }
 
-.impact-box {
-    display: flex;
-    align-items: center;
-    background-color: #e8f5e9;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-bottom: 1.2rem;
-    border: 1px solid #c8e6c9;
-}
-
-.impact-icon {
-    font-size: 1.5rem;
-    margin-right: 15px;
-}
-
 .btn-icon {
     margin-right: 8px;
-}
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-    background: #f5f5f5;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: #666;
-    border: 1px solid #ddd;
-    gap: 5px;
-}
-
-.badge-icon {
-    font-size: 1rem;
-}
-
-.trust-badges {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
 }
 
 /* Dashboard Images */
@@ -814,92 +797,159 @@ body {
     object-fit: cover;
 }
 
-.stat-card {
-    text-align: center;
-}
+/* ============================================
+   STYLES POUR AUTHENTIFICATION AVEC IMAGE
+   ============================================ */
 
-.stat-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
-}
-
-.impact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-}
-
-.impact-item {
-    text-align: center;
-    padding: 1.5rem;
-    background: #f9f9f9;
-    border-radius: 4px;
-    border: 1px solid #eee;
-}
-
-.impact-img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 1rem;
-    object-fit: contain;
-}
-
-.impact-item strong {
-    color: #2e7d32;
-    font-size: 1.5rem;
-    display: block;
-    margin: 0.5rem 0;
-}
-
-.impact-item p {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.empty-state {
-    text-align: center;
-    padding: 3rem;
+.auth-section {
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
     background-color: #f9f9f9;
-    border-radius: 4px;
-    border: 1px dashed #ddd;
 }
 
-.no-donations {
-    color: #999;
-    font-style: italic;
-    margin: 0;
+.auth-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
 }
 
-/* Donation Items with Images */
-.donation-item {
+.auth-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.auth-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.9) 0%, rgba(27, 94, 32, 0.9) 100%);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.auth-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.auth-overlay p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.auth-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.auth-stat-item {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #eee;
-    background: #f9f9f9;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    min-width: 120px;
+}
+
+.auth-stat-item strong {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: white;
+}
+
+.auth-stat-item span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.auth-form-wrapper {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-form-wrapper h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.auth-form-wrapper .form-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* ============================================
+   STYLES POUR LES ACTUALITÉS
+   ============================================ */
+
+.news-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.btn-refresh {
+    background-color: white;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
     border-radius: 4px;
 }
 
-.donation-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+.btn-refresh:hover {
+    background-color: #2e7d32;
+    color: white;
 }
 
-.donation-type-icon {
-    font-size: 1.5rem;
-    margin-right: 15px;
+.loading-spinner {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
 }
 
-.donation-info {
-    flex: 1;
+.loading-spinner p {
+    font-size: 1.1rem;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
-.donation-amount {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #2e7d32;
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
 
 /* ============================================
@@ -970,6 +1020,41 @@ body {
         width: 80px;
         height: 80px;
     }
+
+    /* Responsive Auth Pages */
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-image {
+        min-height: 300px;
+    }
+    
+    .auth-overlay h2 {
+        font-size: 1.5rem;
+    }
+    
+    .auth-overlay p {
+        font-size: 1rem;
+    }
+    
+    .auth-stats {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .auth-stat-item {
+        width: 100%;
+    }
+    
+    .auth-form-wrapper {
+        padding: 2rem;
+    }
+    
+    .news-controls {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1010,5 +1095,18 @@ body {
     .impact-img {
         width: 50px;
         height: 50px;
+    }
+
+    /* Responsive Auth Pages Mobile */
+    .auth-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .auth-overlay {
+        padding: 1.5rem;
+    }
+    
+    .auth-image {
+        min-height: 250px;
     }
 }
