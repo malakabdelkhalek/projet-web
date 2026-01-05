@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Espace - Hope for Gaza</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Hope for Gaza Logo" class="logo-img">
+                <h2>Hope for Gaza</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="dashboard.html" class="active">Mon Espace</a></li>
+                <li><a href="#" id="logoutBtn">Déconnexion</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-header">
+                <img src="images/user-avatar.png" alt="Avatar utilisateur" class="user-avatar">
+                <h2>Bienvenue, <span id="userName">Donateur</span>! 👋</h2>
+                <p>Merci pour votre générosité et votre soutien continu</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <h3 id="totalUserDonations">0DT</h3>
+                    <p>Total des dons</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <h3 id="donationCount">0</h3>
+                    <p>Nombre de dons</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍👩‍👧‍👦</div>
+                    <h3 id="familiesHelped">0</h3>
+                    <p>Familles aidées</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <h3 id="donorBadge">Bronze</h3>
+                    <p>Badge donateur</p>
+                </div>
+            </div>
+
+            <div class="action-box">
+                <h3>Faire un nouveau don</h3>
+                <p>Continuez à faire la différence dans la vie des familles de Gaza</p>
+                <a href="donation.html" class="btn btn-primary">💚 Nouveau Don</a>
+            </div>
+
+            <div class="donations-history">
+                <h3>📋 Historique de mes dons</h3>
+                <div id="donationsList">
+                    <div class="empty-state">
+                        <p class="no-donations">Aucun don pour le moment. Commencez par faire votre premier don !</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-section">
+                <h3>🌟 Votre Impact</h3>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <img src="images/food-icon.png" alt="Repas fournis" class="impact-img">
+                        <p><strong id="mealsProvided">0</strong> repas fournis</p>
+                    </div>
+                    <div class="impact-item">
+                        <img src="images/medical-icon.png" alt="Personnes soignées" class="impact-img">
+                        <p><strong id="medicalAid">0</strong> personnes soignées</p>
+                    </div>
+                    <div class="impact-item">
+                        <img src="images/shelter-icon.png" alt="Kits d'urgence" class="impact-img">
+                        <p><strong id="shelterAid">0</strong> kits d'urgence distribués</p>
+                    </div>
+                    <div class="impact-item">
+                        <img src="images/education-icon.png" alt="Éducation" class="impact-img">
+                        <p><strong id="educationAid">0</strong> enfants scolarisés</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <img src="images/logo.png" alt="Hope for Gaza" class="footer-logo">
+            <p>&copy; 2026 Hope for Gaza. Tous droits réservés.</p>
+            <p>Avec amour et solidarité 🇵🇸</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

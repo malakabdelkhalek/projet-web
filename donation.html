@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faire un Don - Hope for Gaza</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Hope for Gaza Logo" class="logo-img">
+                <h2>Hope for Gaza</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="login.html">Connexion</a></li>
+                <li><a href="dashboard.html" id="dashboardLink" style="display: none;">Mon Espace</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="donation-section">
+        <div class="container">
+            <div class="donation-header">
+                <h2>💚 Faire un Don</h2>
+                <p class="form-subtitle">Votre générosité fait la différence</p>
+            </div>
+            
+            <div class="donation-container">
+                <div class="impact-visual">
+                    <img src="images/food-distribution.jpg" alt="Impact de votre don" class="impact-visual-img">
+                    <div class="impact-overlay">
+                        <p>"Votre don transforme des vies"</p>
+                    </div>
+                </div>
+                
+                <form id="donationForm" class="donation-form">
+                    <div class="form-group">
+                        <label>Choisissez votre montant</label>
+                        <div class="amount-buttons">
+                            <button type="button" class="amount-btn" data-amount="10">
+                                <div class="amount-container">
+                                    <span class="amount-number">10</span>
+                                    <span class="amount-unit">DT</span>
+                                </div>
+                            </button>
+                            <button type="button" class="amount-btn" data-amount="25">
+                                <div class="amount-container">
+                                    <span class="amount-number">25</span>
+                                    <span class="amount-unit">DT</span>
+                                </div>
+                            </button>
+                            <button type="button" class="amount-btn" data-amount="50">
+                                <div class="amount-container">
+                                    <span class="amount-number">50</span>
+                                    <span class="amount-unit">DT</span>
+                                </div>
+                            </button>
+                            <button type="button" class="amount-btn" data-amount="100">
+                                <div class="amount-container">
+                                    <span class="amount-number">100</span>
+                                    <span class="amount-unit">DT</span>
+                                </div>
+                            </button>
+                            <button type="button" class="amount-btn" data-amount="200">
+                                <div class="amount-container">
+                                    <span class="amount-number">200</span>
+                                    <span class="amount-unit">DT</span>
+                                </div>
+                            </button>
+                            <button type="button" class="amount-btn" data-amount="500">
+                                <div class="amount-container">
+                                    <span class="amount-number">500</span>
+                                    <span class="amount-unit">DT</span>
+                                </div>
+                            </button>
+                        </div>
+                        <input type="number" id="customAmount" placeholder="Ou entrez un montant personnalisé (DT)" min="1">
+                    </div>
+
+                    <div class="impact-box" id="impactBox">
+                        <div class="impact-icon">💡</div>
+                        <p><strong>Votre impact :</strong> <span id="impactText">Sélectionnez un montant</span></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type d'aide</label>
+                        <div class="type-buttons">
+                            <button type="button" class="type-btn" data-type="food">
+                                <img src="images/food-icon.png" alt="Aide Alimentaire">
+                                <span>Aide Alimentaire</span>
+                            </button>
+                            <button type="button" class="type-btn" data-type="medical">
+                                <img src="images/medical-icon.png" alt="Soins Médicaux">
+                                <span>Soins Médicaux</span>
+                            </button>
+                            <button type="button" class="type-btn" data-type="shelter">
+                                <img src="images/shelter-icon.png" alt="Abris & Protection">
+                                <span>Abris & Protection</span>
+                            </button>
+                            <button type="button" class="type-btn" data-type="education">
+                                <img src="images/education-icon.png" alt="Éducation">
+                                <span>Éducation</span>
+                            </button>
+                        </div>
+                        <input type="hidden" id="donationType" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donorName">Nom complet</label>
+                        <input type="text" id="donorName" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donorEmail">Email</label>
+                        <input type="email" id="donorEmail" placeholder="votre@email.com" required>
+                    </div>
+
+                    <div class="form-message" id="donationMessage"></div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-large">
+                        <span class="btn-icon">✨</span>
+                        Confirmer mon Don
+                    </button>
+                </form>
+
+                <div class="trust-badges">
+                    <div class="badge">
+                        <span class="badge-icon">🔒</span>
+                        <span>Paiement Sécurisé</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">✅</span>
+                        <span>100% Transparent</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">🌍</span>
+                        <span>Impact Direct</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <img src="images/logo.png" alt="Hope for Gaza" class="footer-logo">
+            <p>&copy; 2026 Hope for Gaza. Tous droits réservés.</p>
+            <p>Avec amour et solidarité 🇵🇸</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
