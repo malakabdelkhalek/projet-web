@@ -116,6 +116,16 @@ if (donationForm) {
         });
     });
     
+    // Gestion de la sélection du type d'aide
+    const typeButtons = document.querySelectorAll('.type-btn');
+    typeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            typeButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            document.getElementById('donationType').value = this.dataset.type;
+        });
+    });
+    
     const customAmount = document.getElementById('customAmount');
     customAmount.addEventListener('input', function() {
         amountButtons.forEach(b => b.classList.remove('active'));
@@ -189,6 +199,7 @@ if (donationForm) {
             } else {
                 donationForm.reset();
                 amountButtons.forEach(b => b.classList.remove('active'));
+                typeButtons.forEach(b => b.classList.remove('active'));
                 selectedAmount = 0;
                 updateImpact(0);
                 messageDiv.style.display = 'none';
